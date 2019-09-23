@@ -1,4 +1,5 @@
 module.exports = ls;
+const done = require ("./bash.js");
 let fs = require ("fs");
 
 function ls(cmd){
@@ -7,8 +8,7 @@ function ls(cmd){
       if(err){
         throw err;
       } else {
-        process.stdout.write(files.join("\n"));
-        process.stdout.write("\nprompt > ");
+        done(files.join("\n"))
       }
     })
   }

@@ -1,4 +1,5 @@
 module.exports = cat
+const done = require ("./bash.js");
 const fs = require('fs')
 
 function cat(cmd) {
@@ -7,9 +8,7 @@ function cat(cmd) {
   if (args[0] === 'cat') {
     fs.readFile(`${pwd}/${args[1]}`, 'utf8', function (err, data) {
       if (err) throw err
-
-      process.stdout.write(data)
-      process.stdout.write("\nprompt > ");
+      done(data)
     })
 
   }

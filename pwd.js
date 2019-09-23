@@ -1,8 +1,8 @@
 module.exports = pwd;
-
+const done = require ("./bash.js");
+console.log(done)
 function pwd(cmd){
   if(cmd === "pwd"){
-    process.stdout.write(process.cwd());
-    process.stdout.write("\nprompt > ");
+    done(process.cwd());
   }
 }
